@@ -31,15 +31,24 @@ public class PlayerController : MonoBehaviour
        if(horizontal < 0)
        {
         spriteRenderer.flipX = true;
+        anim.SetBool("IsRunning", true);
        }
+
        else if(horizontal > 0)
        {
         spriteRenderer.flipX = false;
+        anim.SetBool("IsRunning", true);
        }
+       else
+       {
+        anim.SetBool("IsRunning", false);
+       }
+        
 
        if(Input.GetButtonDown("Jump") && sensor.isGrounded)
        {
         rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        anim.SetBool("IsRunning", true);
        }
     }
 
