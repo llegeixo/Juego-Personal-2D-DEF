@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
        if(Input.GetButtonDown("Jump") && sensor.isGrounded)
        {
         rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        anim.SetBool("IsRunning", true);
+        anim.SetBool("IsJumping", true);
        }
     }
 
