@@ -217,7 +217,7 @@ TextureImporter:
         width: 194
         height: 257
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -225,6 +225,27 @@ TextureImporter:
       bones: []
       spriteID: 859476ae8a0f7164b97ba5fa396c4cfb
       internalID: -743392356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_2014_6
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1162
+        width: 92
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c421026907471134d9540358704337dd
+      internalID: -1285436630
       vertices: []
       indices: 
       edges: []
@@ -241,6 +262,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       IMG_2014_5: -743392356
+      IMG_2014_6: -1285436630
       IMG_2014_0: -1256049956
       IMG_2014_4: 857833313
       IMG_2014_2: 1325548835

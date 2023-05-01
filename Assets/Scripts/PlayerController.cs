@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private GroundSensor sensor;
     float horizontal; 
     public Animator anim;
+    public Berry berry;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
         sensor = GameObject.Find("GroundSensor").GetComponent<GroundSensor>();
         anim = GetComponent<Animator>();
+        berry = GameObject.Find("Berry").GetComponent<Berry>();
     }
 
     // Update is called once per frame
@@ -32,16 +34,19 @@ public class PlayerController : MonoBehaviour
        {
         spriteRenderer.flipX = true;
         anim.SetBool("IsRunning", true);
+        anim.SetBool("IsJumping", false);
        }
 
        else if(horizontal > 0)
        {
         spriteRenderer.flipX = false;
         anim.SetBool("IsRunning", true);
+        anim.SetBool("IsJumping", false);
        }
        else
        {
         anim.SetBool("IsRunning", false);
+        anim.SetBool("IsJumping", false);
        }
         
 
@@ -49,9 +54,20 @@ public class PlayerController : MonoBehaviour
        {
         rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         anim.SetBool("IsJumping", true);
+        anim.SetBool("IsRunning", false);
        }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "CollisionBerry")
+        {
+            Berry berry = collision.gameObject.GetComponent<Berry>(); 
+            berry.Pick();
+        
+        }
+    }
+        
     void FixedUpdate()
     {
         rBody.velocity = new Vector2(horizontal * playerSpeed, rBody.velocity.y);
