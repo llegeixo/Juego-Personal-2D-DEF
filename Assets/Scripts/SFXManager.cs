@@ -5,6 +5,7 @@ using UnityEngine;
 public class SFXManager : MonoBehaviour
 {
     public AudioClip berrypicked;
+    public AudioClip characterdeath;
 
     private AudioSource source;
     
@@ -16,5 +17,10 @@ public class SFXManager : MonoBehaviour
     public void BerryPicked()
     {
         source.PlayOneShot(berrypicked);
+    }
+
+    public void CharacterDeath()
+    {
+        source.PlayOneShot(characterdeath);
     }
 }
