@@ -6,6 +6,7 @@ public class SFXManager : MonoBehaviour
 {
     public AudioClip berrypicked;
     public AudioClip characterdeath;
+    public AudioClip enemydeath;
 
     private AudioSource source;
     
@@ -22,5 +23,10 @@ public class SFXManager : MonoBehaviour
     public void CharacterDeath()
     {
         source.PlayOneShot(characterdeath);
+    }
+
+    public void EnemyDeath()
+    {
+        source.PlayOneShot(enemydeath);
     }
 }

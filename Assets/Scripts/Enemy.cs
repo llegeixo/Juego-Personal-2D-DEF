@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
     {
         boxCollider.enabled = false;
         Destroy(this.gameObject, 0.5f);
+        sfxManager.EnemyDeath();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
