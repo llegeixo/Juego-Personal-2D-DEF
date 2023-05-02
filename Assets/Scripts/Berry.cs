@@ -5,12 +5,13 @@ using UnityEngine;
 public class Berry : MonoBehaviour
 {
     BoxCollider2D boxCollider;
-     SFXManager sfxManager;
+    SFXManager sfxManager;
 
     // Start is called before the first frame update
     void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+        sfxManager = GameObject.Find("SFXManager").GetComponent<SFXManager>();
     }
 
     // Update is called once per frame
